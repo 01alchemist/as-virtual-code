@@ -3,6 +3,7 @@
   "description": "JSON Based Virtual Code Evaluator written in AssemblyScript",
   "version": "0.0.1-alpha",
   "types": "assembly/index.ts",
+  "private": false,
   "author": "Nidin Vinayakan <01@01alchemist.com>",
   "scripts": {
     "asbuild:untouched": "asc assembly/index.ts --exportRuntime --target debug",
