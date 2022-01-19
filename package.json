@@ -1,14 +1,21 @@
 {
+  "name": "as-virtual-code",
+  "description": "JSON Based Virtual Code Evaluator written in AssemblyScript",
+  "version": "alpha-0.0.1",
+  "main": "index.js",
+  "author": "Nidin Vinayakan <01@01alchemist.com>",
   "scripts": {
-    "asbuild:untouched": "asc assembly/index.ts --target debug",
-    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "asbuild:untouched": "asc assembly/index.ts --exportRuntime --target debug",
+    "asbuild:optimized": "asc assembly/index.ts --exportRuntime --target release",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
-    "test": "node tests"
+    "test": "asp --verbose --nologo"
   },
   "dependencies": {
-    "@assemblyscript/loader": "0.0.0"
+    "@assemblyscript/loader": "0.19.22",
+    "assemblyscript-json": "^1.1.0"
   },
   "devDependencies": {
-    "assemblyscript": "0.0.0"
+    "assemblyscript": "0.19.22",
+    "@as-pect/cli": "^6.1.1"
   }
 }
