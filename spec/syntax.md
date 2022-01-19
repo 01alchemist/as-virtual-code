@@ -448,12 +448,12 @@ This function will accurately calculate the difference between two dates in year
 
 `<Measurement:string>` :
 
-- years, months, weeks, days, hours, minutes, seconds
+- year, month, week, day, hour, minute, second, millisecond (default)
 
 `<Truncate:boolean>` :
 
-- true (default) : Truncate the result to zero decimal places
-- false : Will not truncate and return floating-point number
+- true : Truncate the result to zero decimal places
+- false (default): Will not truncate and return floating-point number
 
 #### `$date.date`
 
