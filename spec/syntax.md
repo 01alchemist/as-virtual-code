@@ -455,7 +455,7 @@ This function will accurately calculate the difference between two dates in year
 - true (default) : Truncate the result to zero decimal places
 - false : Will not truncate and return floating-point number
 
-#### `$date.day`
+#### `$date.date`
 
 This function will return 1 based day
 
