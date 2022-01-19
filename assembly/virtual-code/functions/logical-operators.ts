@@ -1,6 +1,6 @@
 import { JSON } from "assemblyscript-json";
 import { Value } from "../types";
-import { EvaluationContext, EvaluationStore, log } from "..";
+import { EvaluationContext, EvaluationStore } from "..";
 import { map_str } from "./utils";
 
 export const $and = (

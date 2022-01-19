@@ -1,6 +1,6 @@
 import { JSON } from "assemblyscript-json";
 import { Value } from "../types";
-import { evaluateCode, EvaluationContext, EvaluationStore, log } from "..";
+import { evaluateCode, EvaluationContext, EvaluationStore } from "..";
 
 export const $select = (
   operands: Value[],

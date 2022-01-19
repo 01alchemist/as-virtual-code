@@ -1,7 +1,7 @@
 import { Date as WASI_Date } from "as-wasi";
 import { JSON } from "assemblyscript-json";
 import { Value } from "../types";
-import { EvaluationContext, EvaluationStore, log } from "..";
+import { EvaluationContext, EvaluationStore } from "..";
 import {
   jsonToBigInt,
   jsonToBoolean,
