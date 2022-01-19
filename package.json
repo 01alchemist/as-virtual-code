@@ -1,7 +1,7 @@
 {
   "name": "@01/as-virtual-code",
   "description": "JSON Based Virtual Code Evaluator written in AssemblyScript",
-  "version": "alpha-0.0.1",
+  "version": "0.0.1-alpha",
   "types": "assembly/index.ts",
   "author": "Nidin Vinayakan <01@01alchemist.com>",
   "scripts": {
