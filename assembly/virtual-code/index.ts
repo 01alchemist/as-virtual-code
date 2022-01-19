@@ -124,7 +124,7 @@ export class EvaluationPayload {
     public store: EvaluationStore
   ) {}
 
-  fromJSON(data: JSON.Obj): EvaluationPayload {
+  static fromJSON(data: JSON.Obj): EvaluationPayload {
     if (data.isObj) {
       const code: JSON.Obj | null = data.get("code") as JSON.Obj;
       const ctxData: JSON.Obj | null = data.get("context") as JSON.Obj;
@@ -143,8 +143,8 @@ export class EvaluationPayload {
     throw new Error(`Invalid payload, data not an object`);
   }
 
-  fromString(data: string): EvaluationPayload {
-    return this.fromJSON(<JSON.Obj>JSON.parse(data));
+  static fromString(data: string): EvaluationPayload {
+    return EvaluationPayload.fromJSON(<JSON.Obj>JSON.parse(data));
   }
 }
 
