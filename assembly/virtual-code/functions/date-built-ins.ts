@@ -165,9 +165,9 @@ function date_add(date: Date, value: i64, unit: Unit): Date {
         month %= 11;
         month = abs(month);
       }
-      log(`setUTCMonth: ${month}`);
+      // log(`setUTCMonth: ${month}`);
       d2.setUTCMonth(month);
-      log(`getUTCMonth: ${d2.getUTCMonth()}`);
+      // log(`getUTCMonth: ${d2.getUTCMonth()}`);
       d2.setUTCDate(0);
       const daysInMonth = d2.getUTCDate();
       d2.setUTCDate(min(_date, daysInMonth));
@@ -276,13 +276,13 @@ function monthDiff_f64(a: Date, b: Date): f64 {
   const adjust = isNegative ? -1 : 1;
   const anchor2 = date_add(a, wholeMonthDiff + adjust, Unit.MONTH).getTime();
   const divider: f64 = f64(isNegative ? anchor - anchor2 : anchor2 - anchor);
-  log(`adjust: ${adjust}`);
-  log(`anchor1: ${anchor}`);
-  log(`anchor2: ${anchor2}`);
-  log(`divider: ${divider}`);
+  // log(`adjust: ${adjust}`);
+  // log(`anchor1: ${anchor}`);
+  // log(`anchor2: ${anchor2}`);
+  // log(`divider: ${divider}`);
   const fraction: f64 = divider == 0 ? 0 : f64(bms - anchor) / divider;
-  log(`wholeMonthDiff: ${wholeMonthDiff}`);
-  log(`fraction: ${fraction}`);
+  // log(`wholeMonthDiff: ${wholeMonthDiff}`);
+  // log(`fraction: ${fraction}`);
   return f64(-wholeMonthDiff) + fraction || 0;
 }
 

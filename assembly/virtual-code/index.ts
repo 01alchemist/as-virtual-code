@@ -3,7 +3,7 @@ import { conditionalOperatorNames, functions } from "./functions";
 import { get, set } from "./functions/utils";
 import { Value, VirtualCode } from "./types";
 
-export declare function log(msg: string): void;
+// export declare function log(msg: string): void;
 
 export enum EvaluationStatus {
   SUCCESS,
