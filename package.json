@@ -1,5 +1,5 @@
 {
-  "name": "as-virtual-code",
+  "name": "@01/as-virtual-code",
   "description": "JSON Based Virtual Code Evaluator written in AssemblyScript",
   "version": "alpha-0.0.1",
   "types": "assembly/index.ts",
