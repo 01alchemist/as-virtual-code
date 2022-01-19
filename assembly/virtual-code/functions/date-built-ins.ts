@@ -114,7 +114,7 @@ function timestamp(operands: Value[]): i64 {
 }
 function date(operands: Value[]): Date {
   if (operands.length == 0) {
-    return new Date(Date.now());
+    return new Date(<i64>WASI_Date.now());
   }
   if (operands[0].isString) {
     // log(`Date string: ${jsonToString(operands[0])}`);
