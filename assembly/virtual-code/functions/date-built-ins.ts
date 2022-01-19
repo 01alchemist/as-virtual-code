@@ -1,3 +1,4 @@
+import { Date as WASI_Date } from "as-wasi";
 import { JSON } from "assemblyscript-json";
 import { Value } from "../types";
 import { EvaluationContext, EvaluationStore, log } from "..";
@@ -24,7 +25,7 @@ enum Unit {
 
 function timestamp(operands: Value[]): i64 {
   if (operands.length == 0) {
-    return Date.now();
+    return <i64>WASI_Date.now();
   }
   if (operands.length == 1) {
     if (operands[0].isString) {
