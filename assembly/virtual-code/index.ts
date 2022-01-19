@@ -21,7 +21,7 @@ export function statusCodeToString(status: EvaluationStatus): string {
   }
 }
 
-export class ExecutionResult {
+export class EvaluationResult {
   status: EvaluationStatus;
   message: string | null;
   store: EvaluationStore;
@@ -54,7 +54,7 @@ export class ExecutionResult {
   }
 }
 
-export function resultToString(result: ExecutionResult): string {
+export function resultToString(result: EvaluationResult): string {
   return result.toString();
 }
 
@@ -117,12 +117,23 @@ export class EvaluationStore extends ObjectMap {
   }
 }
 
+export function evaluate(
+  codeData: string,
+  contextData: string,
+  storeData: string
+): EvaluationResult {
+  const code = JSON.parse(codeData);
+  const context = new EvaluationContext(<JSON.Obj>JSON.parse(contextData));
+  const store = new EvaluationStore(<JSON.Obj>JSON.parse(storeData));
+  return evaluateCode(code, context, store);
+}
+
 export function evaluateCode(
   code: VirtualCode,
   context: EvaluationContext,
   store: EvaluationStore
-): ExecutionResult {
-  const result = new ExecutionResult(context, store);
+): EvaluationResult {
+  const result = new EvaluationResult(context, store);
   if (code === null || code.isNull) {
     result.return = code;
     return result;
