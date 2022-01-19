@@ -117,6 +117,37 @@ export class EvaluationStore extends ObjectMap {
   }
 }
 
+export class EvaluationPayload {
+  constructor(
+    public code: JSON.Obj,
+    public context: EvaluationContext,
+    public store: EvaluationStore
+  ) {}
+
+  fromJSON(data: JSON.Obj): EvaluationPayload {
+    if (data.isObj) {
+      const code: JSON.Obj | null = data.get("code") as JSON.Obj;
+      const ctxData: JSON.Obj | null = data.get("context") as JSON.Obj;
+      const storeData: JSON.Obj | null = data.get("store") as JSON.Obj;
+      if (code != null) {
+        const context = new EvaluationContext(
+          ctxData ? ctxData : new JSON.Obj()
+        );
+        const store = new EvaluationStore(
+          storeData ? storeData : new JSON.Obj()
+        );
+        return new EvaluationPayload(code, context, store);
+      }
+      throw new Error(`Invalid payload, code is null`);
+    }
+    throw new Error(`Invalid payload, data not an object`);
+  }
+
+  fromString(data: string): EvaluationPayload {
+    return this.fromJSON(<JSON.Obj>JSON.parse(data));
+  }
+}
+
 export function evaluate(
   codeData: string,
   contextData: string,
